@@ -9,7 +9,7 @@ package id1212.adisu.homework4.view;
  *
  * @author ema
  */
-import d1212.adisu.homework4.controller.ConverterFacade;
+import id1212.adisu.homework4.controller.ConverterFacade;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
