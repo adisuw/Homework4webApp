@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Currency Converter</title>
+    </h:head>
+    <h:body id="back">
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:form id="myForm">
+            <div class="row">
+                <h:outputLabel for="amount" value = "Enter Amount: "/>
+                <h:inputText id="amount" value="#{converterManager.amount}"
+                             required="true" requiredMessage="Enter value >0">
+                </h:inputText>
+                <h:message for="amount" style="color:red"/>
+            </div><br/>
+            <div class="row">
+                <h:outputLabel for="opetion" value = "From: "/>  
+                <h:selectOneMenu value="#{converterManager.fromCurrency}" id="opetion">
+                    <f:selectItems value="#{converterManager.nameOptions}" />
+                </h:selectOneMenu>
+
+            </div><br/>
+
+            <div class="row">
+                <h:outputLabel for="opt" value="To: "/> 
+                <h:selectOneMenu value="#{converterManager.toCurrency}" id="opt">
+                    <f:selectItems value="#{converterManager.nameOptions}" />
+                </h:selectOneMenu>
+
+            </div><br/> 
+            <div class="buttn">
+             
+               <h:outputLabel for="b" value="  "/>
+                <h:commandButton id = "b" value="Convert" action="#{converterManager.convert}" class="btn"/>
+              
+            </div>
+            Result: 
+            <div class="row">
+
+                <h:outputLabel for="result" value=""/>
+                <h:inputTextarea id="result" value="#{converterManager.convertedValue}" disabled="true">
+
+                </h:inputTextarea>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
